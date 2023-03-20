@@ -57,5 +57,5 @@ else:
     s = "|번호|제목|링크|\n|-|-|-|"
     for i, v in enumerate(df_s.values):
         id, title, level = v
-        s += f"\n|{i+1}|{level_mapper[level]} {title} | [LINK](https://school.programmers.co.kr/learn/courses/30/lessons/{id})|"
+        s += f"\n|{i+1}|{level_mapper[level]} {title} | [🔗](https://school.programmers.co.kr/learn/courses/30/lessons/{id})|"
     st.markdown(s)
