@@ -42,5 +42,7 @@ st.text_input(label="검색어 입력", key='search')
 df = get_data()
 df_s = df[df.title.str.contains(st.session_state['search'])]
 
-st.write(df_s.items())
+for id, title in df_s.items():
+    st.write(id)
+    st.write(title)
 
