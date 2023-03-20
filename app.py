@@ -51,14 +51,9 @@ level_mapper = {
     '5': '🤢',
 }
 
-s = '''
-|번호|제목|링크|
-|-|-|-|
-'''
+s = "|번호|제목|링크|\n|-|-|-|"
 for i, v in enumerate(df_s.values):
     id, title, level = v
-    s += f"""
-        |{i+1}|{level_mapper[level]} {title} | [LINK](https://school.programmers.co.kr/learn/courses/30/lessons/{id})|
-        """
+    s += "\n|{i+1}|{level_mapper[level]} {title} | [LINK](https://school.programmers.co.kr/learn/courses/30/lessons/{id})|"
     
 st.markdown(s)
