@@ -5,9 +5,8 @@ st.title("프로그래머스 파이썬 문제 검색기")
 
 # 프로그래머스의 파이썬 문제들을 긁어오는 api를 직접 참조해서
 # 전체 데이터를 df와 시킬 것
-url = "https://school.programmers.co.kr/api/v1/school/challenges/"
+url = "https://school.programmers.co.kr/api/v1/school/challenges"
 qs = {
-    "languages[]": "python3",
     "order": "recent",
     "page": 1
 } 
