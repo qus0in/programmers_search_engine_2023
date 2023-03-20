@@ -8,14 +8,14 @@ st.title("프로그래머스 파이썬 문제 검색기")
 # url = "https://school.programmers.co.kr/api/v1/school/challenges/?perPage=20&languages[]=python3&order=recent&page=1"
 page_url = lambda x: f"https://school.programmers.co.kr/api/v1/school/challenges/?perPage=20&languages[]=python3&order=recent&page={x}"
 
-res = requests.get(page_url(2))
-st.write(res.status_code)
-st.write(res.text)
+# res = requests.get(page_url(2))
+# st.write(res.status_code)
+# st.write(res.text)
 
 #1. page을 호출해서 total page만 받는다
 res = requests.get(page_url(1))
 json = res.json()
-total_pages = json['total_pages']
+total_pages = json['totalPages']
 st.write(total_pages)
 
 #2. total page -> for문으로 전체 문제 크롤링 -> df
