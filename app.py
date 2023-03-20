@@ -51,7 +51,8 @@ level_mapper = {
     '5': '🤢',
 }
 
-for i, (id, title, level) in enumreate(df_s.values):
+for i, v in enumreate(df_s.values):
+    id, title, level = v
     st.markdown(
         f"""
         {i+1} |{level_mapper[level]} | {title} | [LINK](https://school.programmers.co.kr/learn/courses/30/lessons/{id})
