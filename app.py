@@ -54,7 +54,7 @@ level_mapper = {
 for id, title, level in df_s.values:
     st.markdown(
         f"""
-        {level_mapper[level]} | [{title}](https://school.programmers.co.kr/learn/courses/30/lessons/{id})
+        {level_mapper[level]} | {title} | [바로가기 ☞](https://school.programmers.co.kr/learn/courses/30/lessons/{id})
         """
     )
 
