@@ -28,7 +28,7 @@ def get_data():
     #     st.write(get_tests(i+1))
 
     df = pd.concat([pd.DataFrame(get_tests(i+1), dtype=str) for i in range(total_pages)])
-    df = df[['id', 'title']].sort_values(
+    df = df[['id', 'title', 'level']].sort_values(
         by='id', key=lambda x: x.astype(int)
         ).reset_index(drop=True)
     # st.write(df)
@@ -42,12 +42,10 @@ st.text_input(label="검색어 입력", key='search')
 df = get_data()
 df_s = df[df.title.str.contains(st.session_state['search'])]
 
-for id, title in df_s.values:
+for id, title, level in df_s.values:
     st.markdown(
         f"""
-        [{title}](https://school.programmers.co.kr/learn/courses/30/lessons/{id})
+        😊 level : {level} / [{title}](https://school.programmers.co.kr/learn/courses/30/lessons/{id})
         """
     )
-    st.write(id)
-    st.write(title)
 
