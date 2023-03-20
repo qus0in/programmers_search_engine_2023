@@ -27,7 +27,7 @@ get_tests = lambda x: requests.get(page_url(x)).json()['result']
 
 df = pd.concat([pd.DataFrame(get_tests(i+1), dtype=str) for i in range(total_pages)])
 df = df[['id', 'title']].sort_values(
-    by='id', key=lambda x: int(x)
+    by='id', key=lambda x: x.astype(int)
     ).reset_index(drop=True)
 st.write(df)
 
