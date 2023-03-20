@@ -12,7 +12,7 @@ qs = {
     "order": "recent",
     "page": 2
 }
-res = requests.get(url)
+res = requests.get(url, data=qs)
 st.write(res.status_code)
 st.write(res.text)
 
