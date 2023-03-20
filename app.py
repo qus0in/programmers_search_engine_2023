@@ -29,8 +29,10 @@ df = pd.concat([pd.DataFrame(get_tests(i+1), dtype=str) for i in range(total_pag
 df = df[['id', 'title']].sort_values(
     by='id', key=lambda x: x.astype(int)
     ).reset_index(drop=True)
-st.write(df)
+# st.write(df)
 
 #3. df write
 
 # 글씨를 입력하는 창 -> 입력 -> df -> contains. 노출 -> 링크까지
+
+st.input(label="검색어 입력", key='search')
