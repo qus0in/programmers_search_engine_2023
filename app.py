@@ -43,6 +43,11 @@ df = get_data()
 df_s = df[df.title.str.contains(st.session_state['search'])]
 
 for id, title in df_s.items():
+    st.markdown(
+        f"""
+        [{title}](https://school.programmers.co.kr/learn/courses/30/lessons/{id})
+        """
+    )
     st.write(id)
     st.write(title)
 
