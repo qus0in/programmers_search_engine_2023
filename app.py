@@ -42,10 +42,19 @@ st.text_input(label="검색어 입력", key='search')
 df = get_data()
 df_s = df[df.title.str.contains(st.session_state['search'])]
 
+level_mapper = {
+    0: '😀',
+    1: '😅',
+    2: '🤪',
+    3: '😬',
+    4: '😷',
+    5: '🤢',
+}
+
 for id, title, level in df_s.values:
     st.markdown(
         f"""
-        😊 level : {level} / [{title}](https://school.programmers.co.kr/learn/courses/30/lessons/{id})
+        {level_mapper[level]} | [{title}](https://school.programmers.co.kr/learn/courses/30/lessons/{id})
         """
     )
 
