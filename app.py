@@ -10,7 +10,7 @@ url = "https://school.programmers.co.kr/api/v1/school/challenges/?languages[]=py
 qs = {
     "perPage": 20,
     "order": "recent",
-    "page": 1
+    "page": 2
 }
 res = requests.get(url)
 st.write(res.status_code)
