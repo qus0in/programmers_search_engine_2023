@@ -58,7 +58,7 @@ s = '''
 for i, v in enumerate(df_s.values):
     id, title, level = v
     s += f"""
-        {i+1} |{level_mapper[level]} | {title} | [LINK](https://school.programmers.co.kr/learn/courses/30/lessons/{id})
+        |{i+1}|{level_mapper[level]}|{title} | [LINK](https://school.programmers.co.kr/learn/courses/30/lessons/{id})|
         """
     
 st.markdown(s)
