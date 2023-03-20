@@ -18,7 +18,11 @@ json = res.json()
 total_pages = json['totalPages']
 st.write(total_pages)
 
+get_tests = lambda x: requests.get(page_url(x)).json()['result']
+
 #2. total page -> for문으로 전체 문제 크롤링 -> df
+for i in range(total_pages):
+    st.write(get_tests(i+1))
 #3. df write
 
 # 글씨를 입력하는 창 -> 입력 -> df -> contains. 노출 -> 링크까지
