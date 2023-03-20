@@ -35,4 +35,4 @@ df = df[['id', 'title']].sort_values(
 
 # 글씨를 입력하는 창 -> 입력 -> df -> contains. 노출 -> 링크까지
 
-st.input(label="검색어 입력", key='search')
+st.text_input(label="검색어 입력", key='search')
