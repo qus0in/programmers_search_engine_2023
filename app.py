@@ -12,4 +12,13 @@ res = requests.get(page_url(2))
 st.write(res.status_code)
 st.write(res.text)
 
+#1. page을 호출해서 total page만 받는다
+res = requests.get(page_url(1))
+json = res.json()
+total_pages = json['total_pages']
+st.write(total_pages)
+
+#2. total page -> for문으로 전체 문제 크롤링 -> df
+#3. df write
+
 # 글씨를 입력하는 창 -> 입력 -> df -> contains. 노출 -> 링크까지
