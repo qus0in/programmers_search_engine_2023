@@ -17,7 +17,7 @@ page_url = lambda x: f"https://school.programmers.co.kr/api/v1/school/challenges
 res = requests.get(page_url(1))
 json = res.json()
 total_pages = json['totalPages']
-st.write(total_pages)
+# st.write(total_pages)
 
 get_tests = lambda x: requests.get(page_url(x)).json()['result']
 
@@ -25,7 +25,8 @@ get_tests = lambda x: requests.get(page_url(x)).json()['result']
 # for i in range(total_pages):
 #     st.write(get_tests(i+1))
 
-df = pd.concat([pd.DataFrame(get_tests(i+1)) for i in range(total_pages)])
+df = pd.concat([pd.DataFrame(get_tests(i+1), dtype=str) for i in range(total_pages)])
+df = df[['id', 'title']]
 st.write(df)
 
 #3. df write
